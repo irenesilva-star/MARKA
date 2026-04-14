@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marka — Plano de Marketing Grátis para PMEs Locais</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#0f0e0d;
+  --paper:#faf8f4;
+  --warm:#f2ede4;
+  --accent:#e8472a;
+  --accent-hover:#c03820;
+  --gold:#c49a3c;
+  --green:#1a7a4a;
+  --muted:#7a746c;
+  --border:rgba(15,14,13,0.1);
+  --fd:'Fraunces',serif;
+  --fb:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}
+
+/* COUNTDOWN BANNER */
+.banner{background:var(--accent);padding:12px 24px;text-align:center;font-size:14px;font-weight:500;color:#fff;letter-spacing:0.01em;}
+.banner strong{font-weight:700;}
+.banner #countdown{font-family:var(--fd);font-weight:800;font-size:15px;letter-spacing:0.04em;background:rgba(0,0,0,0.2);padding:2px 10px;border-radius:4px;margin:0 4px;}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 52px;border-bottom:1px solid var(--border);background:var(--paper);}
+.nav-logo{font-family:var(--fd);font-weight:800;font-size:18px;color:var(--ink);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-spots{font-size:13px;color:var(--muted);}
+.nav-spots strong{color:var(--accent);font-weight:700;}
+.btn-nav{background:var(--accent);color:#fff;padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;transition:background 0.2s;}
+.btn-nav:hover{background:var(--accent-hover);}
+
+/* HERO */
+.hero{max-width:860px;margin:0 auto;padding:80px 52px 60px;text-align:center;}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);background:#e8f5ee;padding:6px 16px;border-radius:100px;margin-bottom:32px;border:1px solid rgba(26,122,74,0.2);}
+.kicker-dot{width:7px;height:7px;border-radius:50%;background:var(--green);}
+.hero-title{font-family:var(--fd);font-size:clamp(42px,6vw,72px);font-weight:800;line-height:1.0;letter-spacing:-0.03em;margin-bottom:24px;}
+.hero-title .strike{position:relative;color:var(--muted);opacity:0.5;}
+.hero-title .strike::after{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:var(--accent);transform:rotate(-2deg);}
+.hero-title .free{color:var(--accent);}
+.hero-sub{font-size:19px;font-weight:300;color:var(--muted);line-height:1.75;max-width:620px;margin:0 auto 40px;}
+.hero-sub strong{color:var(--ink);font-weight:500;}
+.btn-hero{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 40px;border-radius:8px;font-family:var(--fb);font-size:16px;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s,transform 0.15s;border:none;cursor:pointer;}
+.btn-hero:hover{background:var(--accent-hover);transform:translateY(-2px);}
+.btn-hero svg{transition:transform 0.2s;}
+.btn-hero:hover svg{transform:translateX(4px);}
+.hero-note{font-size:13px;color:var(--muted);margin-top:14px;}
+.hero-note strong{color:var(--green);font-weight:600;}
+
+/* SPOTS BAR */
+.spots-bar{background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 52px;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+.spot-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);}
+.spot-icon{font-size:18px;}
+.spot-item strong{color:var(--ink);font-weight:600;}
+
+/* WHAT YOU GET */
+.get{max-width:960px;margin:0 auto;padding:80px 52px;}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+.section-tag::before{content:'';width:18px;height:2px;background:var(--accent);}
+.section-title{font-family:var(--fd);font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.05;letter-spacing:-0.025em;margin-bottom:16px;}
+.section-sub{font-size:17px;font-weight:300;color:var(--muted);line-height:1.7;max-width:540px;margin-bottom:52px;}
+.get-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:16px;overflow:hidden;border:1px solid var(--border);}
+.get-item{background:#fff;padding:36px 28px;transition:background 0.2s;}
+.get-item:hover{background:var(--warm);}
+.get-num{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--accent);letter-spacing:0.06em;margin-bottom:20px;}
+.get-icon{font-size:28px;margin-bottom:14px;display:block;}
+.get-title{font-family:var(--fd);font-size:18px;font-weight:700;margin-bottom:8px;}
+.get-desc{font-size:13px;color:var(--muted);line-height:1.65;}
+.get-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;background:var(--warm);color:var(--muted);margin-top:12px;margin-right:4px;}
+
+/* VALUE COMPARISON */
+.compare{background:var(--ink);padding:80px 52px;color:#fff;}
+.compare-inner{max-width:860px;margin:0 auto;text-align:center;}
+.compare .section-title{color:#fff;}
+.compare .section-sub{color:rgba(255,255,255,0.45);margin:0 auto 52px;}
+.compare-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:center;}
+.compare-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:36px 28px;}
+.compare-card.them .compare-price{color:rgba(255,255,255,0.3);font-size:44px;}
+.compare-card.us{border-color:var(--accent);background:rgba(200,80,26,0.1);}
+.compare-card.us .compare-price{color:var(--accent);}
+.compare-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;}
+.compare-card.us .compare-label{color:var(--accent);}
+.compare-price{font-family:var(--fd);font-size:56px;font-weight:800;line-height:1;margin-bottom:6px;text-decoration:none;}
+.compare-price-note{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;}
+.compare-card.us .compare-price-note{color:rgba(255,255,255,0.5);}
+.compare-features{list-style:none;display:flex;flex-direction:column;gap:10px;text-align:left;}
+.compare-features li{font-size:13px;color:rgba(255,255,255,0.45);display:flex;align-items:center;gap:8px;}
+.compare-card.us .compare-features li{color:rgba(255,255,255,0.7);}
+.cf-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;}
+.compare-card.us .cf-dot{background:var(--accent);}
+.compare-vs{font-family:var(--fd);font-size:28px;font-weight:800;color:rgba(255,255,255,0.2);padding:0 28px;}
+.compare-saving{display:inline-flex;align-items:center;gap:8px;margin-top:36px;background:rgba(26,122,74,0.2);border:1px solid rgba(26,122,74,0.3);padding:12px 24px;border-radius:8px;font-size:15px;font-weight:600;color:#4ade80;}
+
+/* WHAT WE ASK */
+.ask{max-width:860px;margin:0 auto;padding:80px 52px;}
+.ask-box{background:var(--warm);border:1px solid var(--border);border-radius:20px;padding:52px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.ask-title{font-family:var(--fd);font-size:32px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px;}
+.ask-sub{font-size:15px;color:var(--muted);line-height:1.7;}
+.ask-list{display:flex;flex-direction:column;gap:14px;}
+.ask-item{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;background:#fff;border-radius:10px;border:1px solid var(--border);}
+.ask-check{width:24px;height:24px;border-radius:6px;background:#e8f5ee;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ask-check svg{width:12px;height:12px;}
+.ask-text{font-size:14px;color:var(--ink);line-height:1.5;}
+.ask-text span{font-size:12px;color:var(--muted);display:block;margin-top:2px;}
+
+/* WHO IT'S FOR */
+.who{background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 52px;}
+.who-inner{max-width:960px;margin:0 auto;}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+.who-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 22px;text-align:center;transition:transform 0.2s,box-shadow 0.2s;}
+.who-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(15,14,13,0.07);}
+.who-icon{font-size:32px;margin-bottom:14px;display:block;}
+.who-name{font-family:var(--fd);font-size:15px;font-weight:700;margin-bottom:6px;}
+.who-desc{font-size:12px;color:var(--muted);line-height:1.55;}
+
+/* FORM SECTION */
+.form-section{max-width:700px;margin:0 auto;padding:80px 52px;}
+.form-wrap{background:#fff;border:1px solid var(--border);border-radius:20px;padding:48px;}
+.form-title{font-family:var(--fd);font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;}
+.form-subtitle{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.6;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.form-full{grid-column:1/-1;}
+.fgroup{display:flex;flex-direction:column;gap:7px;}
+.flabel{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+.finput,.fselect,.ftextarea{background:var(--paper);border:1px solid var(--border);border-radius:8px;padding:13px 16px;font-family:var(--fb);font-size:14px;color:var(--ink);outline:none;transition:border-color 0.2s,background 0.2s;width:100%;}
+.finput::placeholder,.ftextarea::placeholder{color:var(--muted);opacity:0.6;}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--accent);background:#fff;}
+.fselect{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a746c' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;}
+.ftextarea{resize:vertical;min-height:80px;}
+.form-agree{display:flex;align-items:flex-start;gap:10px;padding:16px;background:var(--warm);border-radius:8px;border:1px solid var(--border);cursor:pointer;margin-bottom:4px;}
+.form-agree input{accent-color:var(--accent);width:15px;height:15px;flex-shrink:0;margin-top:2px;}
+.agree-text{font-size:13px;color:var(--muted);line-height:1.55;}
+.agree-text strong{color:var(--ink);font-weight:600;}
+.fsubmit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px;border-radius:8px;background:var(--accent);color:#fff;font-family:var(--fb);font-size:16px;font-weight:600;border:none;cursor:pointer;margin-top:16px;letter-spacing:0.02em;transition:background 0.2s,transform 0.15s;}
+.fsubmit:hover{background:var(--accent-hover);transform:translateY(-2px);}
+.form-guarantee{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:18px;font-size:13px;color:var(--muted);}
+.guarantee-icon{font-size:18px;}
+
+/* URGENCY */
+.urgency{background:var(--accent);padding:60px 52px;text-align:center;color:#fff;}
+.urgency-title{font-family:var(--fd);font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;}
+.urgency-sub{font-size:17px;opacity:0.8;margin-bottom:32px;font-weight:300;}
+.btn-urgency{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--accent);padding:18px 40px;border-radius:8px;font-family:var(--fb);font-size:16px;font-weight:700;text-decoration:none;transition:transform 0.15s;border:none;cursor:pointer;}
+.btn-urgency:hover{transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:var(--fd);font-weight:800;font-size:16px;color:rgba(255,255,255,0.5);}
+.footer-logo span{color:var(--accent);}
+footer p{font-size:12px;color:rgba(255,255,255,0.25);}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;right:28px;background:#fff;padding:18px 22px;border-radius:12px;border-left:4px solid var(--green);box-shadow:0 8px 32px rgba(0,0,0,0.12);transform:translateY(80px);opacity:0;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);z-index:999;max-width:300px;}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast-title{font-weight:600;font-size:14px;margin-bottom:3px;color:var(--ink);}
+.toast-sub{font-size:13px;color:var(--muted);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.fu{opacity:0;animation:fadeUp 0.6s ease forwards;}
+.d1{animation-delay:0.1s;}.d2{animation-delay:0.25s;}.d3{animation-delay:0.4s;}.d4{animation-delay:0.55s;}
+
+/* PULSE */
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+.pulse{animation:pulse 2s ease-in-out infinite;}
+
+@media(max-width:860px){
+  nav{padding:14px 20px;}
+  .nav-right .nav-spots{display:none;}
+  .hero,.get,.ask,.form-section,.urgency,.who{padding:60px 20px;}
+  .spots-bar,.compare,.who{padding:48px 20px;}
+  .hero-title{font-size:40px;}
+  .get-grid{grid-template-columns:1fr;}
+  .compare-grid{grid-template-columns:1fr;gap:16px;}
+  .compare-vs{padding:8px;font-size:20px;}
+  .ask-box{grid-template-columns:1fr;gap:28px;padding:28px;}
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- COUNTDOWN BANNER -->
+<div class="banner">
+  Oferta gratuita disponível por tempo limitado — <span id="countdown">23:47:12</span> restantes · <strong>Apenas 5 vagas esta semana</strong>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:8px;"><svg width="28" height="28" viewBox="0 0 80 80" fill="none" style="flex-shrink:0;"><rect x="4" y="4" width="72" height="72" rx="18" fill="#e8472a"/><path d="M20 56 L20 28 L40 48 L60 28 L60 56" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="40" cy="48" r="5" fill="white"/></svg><span style="font-family:'Fraunces',serif;font-weight:900;font-size:20px;letter-spacing:-0.03em;color:var(--ink);">marka<span style="color:var(--accent);">.</span></span></a>
+  <div class="nav-right">
+    <span class="nav-spots"><span class="pulse" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;"></span><strong>3 vagas</strong> disponíveis esta semana</span>
+    <a href="#candidatar" class="btn-nav">Quero a minha vaga</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-kicker fu"><div class="kicker-dot"></div>Medida temporária · Plano gratuito</div>
+  <h1 class="hero-title fu d1">
+    O teu primeiro plano<br>de marketing<br>
+    <span class="strike">€97</span> <span class="free">grátis.</span>
+  </h1>
+  <p class="hero-sub fu d2">
+    Estamos a lançar o nosso serviço e queremos <strong>5 pequenas empresas locais</strong> para criar os primeiros casos de sucesso. Tu recebes o plano completo, nós pedimos apenas um testemunho honesto.
+  </p>
+  <div class="fu d3">
+    <a href="#candidatar" class="btn-hero">
+      Quero a minha vaga grátis
+      <svg width="18" height="18" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="hero-note">Sem cartão de crédito. Sem compromisso futuro. <strong>100% gratuito.</strong></p>
+  </div>
+</div>
+
+<!-- SPOTS BAR -->
+<div class="spots-bar">
+  <div class="spot-item"><span class="spot-icon">🕐</span><span>Duração: <strong>oferta esta semana</strong></span></div>
+  <div class="spot-item"><span class="spot-icon">🎯</span><span>Vagas: <strong>apenas 5 empresas</strong></span></div>
+  <div class="spot-item"><span class="spot-icon">📍</span><span>Para: <strong>qualquer PME local</strong></span></div>
+  <div class="spot-item"><span class="spot-icon">⚡</span><span>Entrega: <strong>em 48 horas</strong></span></div>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="get">
+  <div class="section-tag">O que recebes</div>
+  <h2 class="section-title">Um plano completo.<br>Valorizado em €97. Grátis.</h2>
+  <p class="section-sub">O mesmo plano que os nossos clientes pagos recebem — sem cortes, sem versão reduzida.</p>
+  <div class="get-grid">
+    <div class="get-item">
+      <div class="get-num">01</div>
+      <div class="get-icon">🔍</div>
+      <div class="get-title">Análise do teu negócio</div>
+      <p class="get-desc">Estudamos o teu setor, a tua zona geográfica e os teus concorrentes diretos para perceber onde estás e onde podes chegar.</p>
+      <span class="get-tag">Setor</span><span class="get-tag">Concorrência</span>
+    </div>
+    <div class="get-item">
+      <div class="get-num">02</div>
+      <div class="get-icon">🎯</div>
+      <div class="get-title">Estratégia personalizada</div>
+      <p class="get-desc">Canais prioritários, mensagens-chave, público-alvo definido e posicionamento claro para o teu negócio — não um template genérico.</p>
+      <span class="get-tag">Canais</span><span class="get-tag">Público</span>
+    </div>
+    <div class="get-item">
+      <div class="get-num">03</div>
+      <div class="get-icon">📅</div>
+      <div class="get-title">Calendário editorial 3 meses</div>
+      <p class="get-desc">Um calendário semana a semana com temas, datas importantes do teu setor e sugestões de conteúdo prontas a usar.</p>
+      <span class="get-tag">3 meses</span><span class="get-tag">Pronto a usar</span>
+    </div>
+    <div class="get-item">
+      <div class="get-num">04</div>
+      <div class="get-icon">✍️</div>
+      <div class="get-title">5 copies prontos</div>
+      <p class="get-desc">Cinco textos para redes sociais escritos especificamente para o teu negócio — só precisas de copiar, ajustar e publicar.</p>
+      <span class="get-tag">Instagram</span><span class="get-tag">Facebook</span>
+    </div>
+    <div class="get-item">
+      <div class="get-num">05</div>
+      <div class="get-icon">🗺️</div>
+      <div class="get-title">Plano de ação imediata</div>
+      <p class="get-desc">As 3 ações mais importantes que podes fazer nos próximos 30 dias para começar a ver resultados — por ordem de prioridade.</p>
+      <span class="get-tag">30 dias</span><span class="get-tag">Ação</span>
+    </div>
+    <div class="get-item">
+      <div class="get-num">06</div>
+      <div class="get-icon">📞</div>
+      <div class="get-title">Call de apresentação</div>
+      <p class="get-desc">Uma chamada de 30 minutos onde apresentamos o plano, explicamos cada decisão e respondemos a todas as tuas dúvidas.</p>
+      <span class="get-tag">30 min</span><span class="get-tag">Online</span>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE -->
+<div class="compare">
+  <div class="compare-inner">
+    <div class="section-tag" style="justify-content:center;color:rgba(255,255,255,0.4);">Comparação de valor</div>
+    <h2 class="section-title">O que este plano vale</h2>
+    <p class="section-sub">O mesmo trabalho numa agência tradicional custa muito mais. Esta semana, é grátis.</p>
+    <div class="compare-grid">
+      <div class="compare-card them">
+        <div class="compare-label">Agência tradicional</div>
+        <div class="compare-price" style="text-decoration:line-through;">€800+</div>
+        <div class="compare-price-note">valor médio de mercado</div>
+        <ul class="compare-features">
+          <li><div class="cf-dot"></div>Plano genérico, pouco personalizado</li>
+          <li><div class="cf-dot"></div>Semanas de espera</li>
+          <li><div class="cf-dot"></div>Contrato anual obrigatório</li>
+          <li><div class="cf-dot"></div>Reuniões longas e burocráticas</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card us">
+        <div class="compare-label">Marka · Esta semana</div>
+        <div class="compare-price">€0</div>
+        <div class="compare-price-note">grátis em troca de testemunho</div>
+        <ul class="compare-features">
+          <li><div class="cf-dot"></div>Plano 100% personalizado ao teu negócio</li>
+          <li><div class="cf-dot"></div>Entrega em 48 horas</li>
+          <li><div class="cf-dot"></div>Sem contratos, sem compromissos</li>
+          <li><div class="cf-dot"></div>Call de apresentação incluída</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare-saving">
+      Poupas mais de €800 — esta semana apenas
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE ASK -->
+<div class="ask">
+  <div class="ask-box">
+    <div>
+      <div class="section-tag">O que pedimos</div>
+      <h2 class="ask-title">Simples e transparente</h2>
+      <p class="ask-sub">Estamos a lançar o nosso serviço e precisamos de casos de estudo reais. O negócio é justo: tu recebes o plano, nós pedimos o teu feedback.</p>
+    </div>
+    <div class="ask-list">
+      <div class="ask-item">
+        <div class="ask-check"><svg viewBox="0 0 12 10" fill="none"><path d="M1 5l4 4 6-8" stroke="#1a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ask-text">Um testemunho escrito honesto após receberes o plano<span>2-3 frases sobre a tua experiência — positivo ou construtivo</span></div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-check"><svg viewBox="0 0 12 10" fill="none"><path d="M1 5l4 4 6-8" stroke="#1a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ask-text">Autorização para usar o teu caso como exemplo<span>Apenas nome da empresa e setor — sem dados privados ou financeiros</span></div>
+      </div>
+      <div class="ask-item">
+        <div class="ask-check"><svg viewBox="0 0 12 10" fill="none"><path d="M1 5l4 4 6-8" stroke="#1a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ask-text">Preencher o formulário de diagnóstico com atenção<span>As boas respostas geram melhores planos — leva 10 min</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO IT'S FOR -->
+<div class="who">
+  <div class="who-inner">
+    <div class="section-tag">Para quem é</div>
+    <h2 class="section-title">Qualquer pequena empresa local</h2>
+    <p class="section-sub" style="color:var(--muted);">Se tens um negócio local e nunca tiveste uma estratégia de marketing definida, esta oferta é para ti.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <span class="who-icon">🍽️</span>
+        <div class="who-name">Restauração</div>
+        <p class="who-desc">Restaurantes, cafés, pastelarias, takeaways, catering</p>
+      </div>
+      <div class="who-card">
+        <span class="who-icon">🏗️</span>
+        <div class="who-name">Construção</div>
+        <p class="who-desc">Empreiteiros, remodelações, carpintaria, elétrica, canalização</p>
+      </div>
+      <div class="who-card">
+        <span class="who-icon">💆</span>
+        <div class="who-name">Saúde & Bem-estar</div>
+        <p class="who-desc">Clínicas, ginásios, cabeleireiros, estética, fisioterapia</p>
+      </div>
+      <div class="who-card">
+        <span class="who-icon">🛍️</span>
+        <div class="who-name">Comércio local</div>
+        <p class="who-desc">Lojas de roupa, floristas, papelarias, mercearias, artesanato</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-section" id="candidatar">
+  <div class="form-wrap">
+    <div class="form-title">Candidata-te à vaga gratuita</div>
+    <p class="form-subtitle">Preenche o formulário e entraremos em contacto em menos de 24h para confirmar a tua vaga.</p>
+    <div class="form-grid">
+      <div class="fgroup">
+        <label class="flabel">Nome</label>
+        <input class="finput" type="text" placeholder="O teu nome">
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Email</label>
+        <input class="finput" type="email" placeholder="email@empresa.pt">
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Nome do negócio</label>
+        <input class="finput" type="text" placeholder="Ex: Café Central">
+      </div>
+      <div class="fgroup">
+        <label class="flabel">WhatsApp</label>
+        <input class="finput" type="tel" placeholder="+351 9XX XXX XXX">
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Setor</label>
+        <select class="fselect">
+          <option value="" disabled selected>O teu setor</option>
+          <option>Restauração (restaurante, café, pastelaria...)</option>
+          <option>Construção civil e remodelações</option>
+          <option>Saúde e bem-estar</option>
+          <option>Comércio local / retalho</option>
+          <option>Serviços (contabilidade, advogado...)</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Localização</label>
+        <input class="finput" type="text" placeholder="Ex: Lisboa, Porto, Setúbal...">
+      </div>
+      <div class="fgroup form-full">
+        <label class="flabel">Em 1 frase: qual é o teu maior desafio de marketing?</label>
+        <textarea class="ftextarea" placeholder="Ex: Não sei como aparecer no Google. Nunca tive estratégia definida. Dependemos do boca-a-boca..."></textarea>
+      </div>
+      <div class="form-full">
+        <label class="form-agree">
+          <input type="checkbox" id="agree-check">
+          <span class="agree-text">Aceito partilhar um <strong>testemunho honesto</strong> após receber o plano e autorizo o uso do nome da minha empresa como caso de estudo. Sem dados privados ou financeiros.</span>
+        </label>
+      </div>
+    </div>
+    <button class="fsubmit" onclick="handleSubmit()">
+      Quero a minha vaga grátis
+      <svg width="18" height="18" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="form-guarantee">
+      <span class="guarantee-icon">🔒</span>
+      <span>100% gratuito · Sem cartão · Sem compromisso futuro</span>
+    </div>
+  </div>
+</div>
+
+<!-- URGENCY -->
+<div class="urgency">
+  <h2 class="urgency-title">Restam apenas 3 vagas esta semana.</h2>
+  <p class="urgency-sub">Quando as vagas acabarem, a oferta gratuita encerra. Sem exceções.</p>
+  <button class="btn-urgency" onclick="document.getElementById('candidatar').scrollIntoView({behavior:'smooth'})">
+    Garantir a minha vaga agora
+    <svg width="18" height="18" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo" style="display:flex;align-items:center;gap:8px;"><svg width="28" height="28" viewBox="0 0 80 80" fill="none" style="flex-shrink:0;"><rect x="4" y="4" width="72" height="72" rx="18" fill="#e8472a"/><path d="M20 56 L20 28 L40 48 L60 28 L60 56" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="40" cy="48" r="5" fill="white"/></svg><span style="font-family:'Fraunces',serif;font-weight:900;font-size:18px;letter-spacing:-0.03em;color:rgba(255,255,255,0.7);">marka<span style="color:#e8472a;">.</span></span></div>
+  <p>© 2025 Marka · Oferta limitada a 5 vagas semanais</p>
+</footer>
+
+<div class="toast" id="toast">
+  <div class="toast-title">Candidatura recebida!</div>
+  <div class="toast-sub">Entraremos em contacto em menos de 24h para confirmar a tua vaga.</div>
+</div>
+
+<script>
+// COUNTDOWN
+function updateCountdown(){
+  const stored = localStorage.getItem('cd_end');
+  let end;
+  if(stored){
+    end = parseInt(stored);
+  } else {
+    end = Date.now() + (23*3600 + 47*60 + 12)*1000;
+    try{ localStorage.setItem('cd_end', end); }catch(e){}
+  }
+  const diff = Math.max(0, end - Date.now());
+  const h = Math.floor(diff/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  const pad = n => String(n).padStart(2,'0');
+  const el = document.getElementById('countdown');
+  if(el) el.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+  if(diff > 0) setTimeout(updateCountdown, 1000);
+}
+updateCountdown();
+
+// FORM SUBMIT
+function handleSubmit(){
+  const check = document.getElementById('agree-check');
+  if(!check.checked){
+    check.closest('.form-agree').style.borderColor = '#ef4444';
+    setTimeout(()=> check.closest('.form-agree').style.borderColor = '', 2000);
+    return;
+  }
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=> t.classList.remove('show'), 5000);
+}
+
+// SCROLL ANIMATIONS
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.get-item,.compare-card,.ask-item,.who-card').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(18px)';
+  el.style.transition='opacity 0.5s ease,transform 0.5s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
